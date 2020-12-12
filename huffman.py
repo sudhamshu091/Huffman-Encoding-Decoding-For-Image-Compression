@@ -1,11 +1,11 @@
 import re
 import numpy as np
 from PIL import Image
-print("Huffman Compression Program")
+print("Huffman Image Compression Program")
 print("=================================================================")
-h = int(input("Enter 1 if you want to input an image file, 2 for default case:"))
+h = int(input("Enter 1 if you want to input an colour image file, 2 for default gray scale case:"))
 if h == 1:
-    print("Enter the filename:")
+    file = input("Enter the filename:")
     my_string = np.asarray(Image.open(file),np.uint8)
     shape = my_string.shape
     a = my_string
@@ -17,6 +17,7 @@ elif h == 2:
     print ("Enetered string is:",my_string)
     a = my_string
     my_string = str(my_string.tolist())
+
 else:
     print("You entered invalid input")                    # taking user input
 
@@ -142,3 +143,5 @@ if h == 1:
     print(res.shape)
     data = Image.fromarray(res,"RGB")
     data.save('uncompressed.png')
+    if a.all() == res.all():
+        print("Success")
