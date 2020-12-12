@@ -5,7 +5,7 @@ print("Huffman Compression Program")
 print("=================================================================")
 h = int(input("Enter 1 if you want to input an image file, 2 for default case:"))
 if h == 1:
-    print("Enter the filename")
+    print("Enter the filename:")
     my_string = np.asarray(Image.open(file),np.uint8)
     shape = my_string.shape
     a = my_string
@@ -137,5 +137,8 @@ if h == 1:
     res = np.array(res)
     res = np.reshape(res, shape)
     print(res)
+    print("Observe the shapes and input and output arrays are matching or not")
+    print(shape)
+    print(res.shape)
     data = Image.fromarray(res,"RGB")
     data.save('uncompressed.png')
