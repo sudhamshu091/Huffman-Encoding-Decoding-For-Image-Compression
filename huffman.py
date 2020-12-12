@@ -124,14 +124,6 @@ for digit in bitstring:
         pos+=1
 
 print("Your UNCOMPRESSED data is:")
-if h == 2:
-    res = uncompressed_string.strip('][').split(', ')
-    print(res)
-    res = np.array(res)
-    res = np.reshape(res, (1024, 720))
-    print(res)
-    data = Image.fromarray(res)
-    data.save('uncompressed.png')
 if h == 1:
     temp = re.findall(r'\d+', uncompressed_string)
     res = list(map(int, temp))
@@ -145,3 +137,13 @@ if h == 1:
     data.save('uncompressed.png')
     if a.all() == res.all():
         print("Success")
+if h == 2:
+    res = uncompressed_string.strip('][').split(', ')
+    print(res)
+    res = np.array(res)
+    res = np.reshape(res, (1024, 720))
+    print(res)
+    data = Image.fromarray(res)
+    data.save('uncompressed.png')
+    print("Success")
+
