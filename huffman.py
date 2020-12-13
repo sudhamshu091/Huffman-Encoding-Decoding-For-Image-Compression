@@ -139,9 +139,11 @@ if h == 1:
     if a.all() == res.all():
         print("Success")
 if h == 2:
-    res = uncompressed_string.strip('][').split(', ')
+    temp = re.findall(r'\d+', uncompressed_string)
+    res = list(map(int, temp))
     print(res)
     res = np.array(res)
+    res = res.astype(np.uint8)
     res = np.reshape(res, (1024, 720))
     print(res)
     data = Image.fromarray(res)
