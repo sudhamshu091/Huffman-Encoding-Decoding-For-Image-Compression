@@ -1,5 +1,4 @@
 # Huffman-Encoding-Decoding-For-Image-Compression
-# LZ77-Encoding-and-Decoding-for-Image-Compression
 [Input Image](new.jpg)                                                                                                 
 ![Input Image](new.jpg)<br>
 [Output Image](uncompressed.png)                                                                           
