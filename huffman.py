@@ -132,8 +132,8 @@ if h == 1:
     res = np.reshape(res, shape)
     print(res)
     print("Observe the shapes and input and output arrays are matching or not")
-    print(shape)
-    print(res.shape)
+    print("Input image dimensions:",shape)
+    print("Output image dimensions:",res.shape)
     data = Image.fromarray(res)
     data.save('uncompressed.png')
     if a.all() == res.all():
