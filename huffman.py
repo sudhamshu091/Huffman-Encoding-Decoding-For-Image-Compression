@@ -1,7 +1,7 @@
 import re
 import numpy as np
 from PIL import Image
-print("Huffman Image Compression Program")
+print("Huffman Compression Program")
 print("=================================================================")
 h = int(input("Enter 1 if you want to input an colour image file, 2 for default gray scale case:"))
 if h == 1:
@@ -128,6 +128,7 @@ if h == 1:
     temp = re.findall(r'\d+', uncompressed_string)
     res = list(map(int, temp))
     res = np.array(res)
+    res = res.astype(np.uint8)
     res = np.reshape(res, shape)
     print(res)
     print("Observe the shapes and input and output arrays are matching or not")
@@ -146,4 +147,3 @@ if h == 2:
     data = Image.fromarray(res)
     data.save('uncompressed.png')
     print("Success")
-
